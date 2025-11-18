@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+:root {
+  color: white;
+  font-size: 10px;
+  font-weight: 500;
+  font-family: "Fredoka", sans-serif;
+  background-color: #fefcac;
+}
