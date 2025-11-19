@@ -2,7 +2,7 @@ export const projects = [
     {
         id: 1,
         name: "TekZone",
-        description: "hola",
+        description: "TekZone is an e-commerce web application built with Next.js and React. It includes an API connected to an SQL database that retrieves product data. The platform features a homepage, product catalog, shopping cart, and informational sections like About, delivering a fast and dynamic browsing experience.",
         img: "/projectsImages/tekzonePreview.png",
         technologies: [
             { name: 'TypeScript', img: '/assets/icons/typescript.svg' },
@@ -17,7 +17,7 @@ export const projects = [
     {
         id: 2,
         name: "Budget Manager",
-        description: "holaaa",
+        description: "Budget Manager is a React-based application that allows users to define a budget, add expenses, and filter them by category. It includes a visual chart to track budget usage and supports drag-and-drop interactions to edit or delete expenses. The app provides a clear and intuitive way to manage personal finances.",
         img: "/projectsImages/budgetmanagerPreview.png",
         technologies: [
             { name: 'TypeScript', img: '/assets/icons/typescript.svg' },
