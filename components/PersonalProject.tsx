@@ -2,29 +2,31 @@ type PersonalProjectProps = {
     title: string;
     description: string;
     img: string;
+    gitRepo: string;
+    url: string;
     technologies: { name: string, img: string }[];
 }
 
-export default function PersonalProject({ title, description, img, technologies }: PersonalProjectProps) {
+export default function PersonalProject({ title, description, img, gitRepo, url, technologies }: PersonalProjectProps) {
 
     return (
-        <div className="p-8 bg-white w-auto rounded-2xl shadow-black/60 shadow-lg border-4 border-[#4B2814]">
+        <div className="p-8 bg-white w-auto rounded-2xl shadow-black/60 shadow-lg border border-[#4B2814]">
             <h3 className="text-5xl text-[#4B2814] p-2 bg-white rounded-2xl font-semibold text-center mb-5">{title}</h3>
 
             <div className="flex gap-4 mb-6">
                 <div className="w-full justify-items-center relative">
-                    <img src={img} alt={title} className="h-210 w-230 object-cover rounded-2xl object-top" />
-                    <div className="absolute flex flex-col inset-0 w-full h-full lg:opacity-0 hover:opacity-100 bg-black/70 rounded-2xl transition duration-500 justify-around items-center text-center p-[5%]">
-                        <p className="text-2xl lg:text-3xl">{description}</p>
+                    <img src={img} alt={title} className="h-160 md:h-210 w-230 object-cover rounded-2xl object-top" />
+                    <div className="absolute flex flex-col inset-0 w-full h-full lg:opacity-0 hover:opacity-100 bg-white/60 rounded-2xl transition 
+                    duration-500 justify-around items-center text-center px-[5%] md:px-[15%]">
+                        <p className="text-xl sm:text-2xl lg:text-3xl text-black lg:w-full sm:w-[85%] p-2 rounded-lg bg-white">{description}</p>
                         <div className="flex flex-col lg:flex-row gap-8">
-                            <div className="flex gap-3 w-auto h-15 bg-white py-2 px-4 rounded-full">
+                            <a href={url} target="blank" className="flex gap-3 w-auto h-15 bg-white py-2 px-4 rounded-full">
                                 <img src="assets/icons/link.svg" alt="Link to site" className="max-w-[30%]" />
-                                <a href="https://tekzone-phi.vercel.app" target="blank"
-                                    className="text-lg lg:text-3xl text-black self-center ">Visit Site</a>
-                            </div>
+                                <p className="text-lg lg:text-3xl text-black self-center ">Visit Site</p>
+                            </a>
                             <div className="flex gap-3 w-auto h-15 bg-white py-2 px-4 rounded-full">
                                 <img src="assets/icons/github.svg" alt="Link to github repo" className="max-w-[30%]" />
-                                <a href="" target="blank" className="text-lg lg:text-3xl text-black self-center">Visit Repo</a>
+                                <a href={gitRepo} target="blank" className="text-lg lg:text-3xl text-black self-center">Visit Repo</a>
                             </div>
                         </div>
                     </div>
