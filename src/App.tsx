@@ -12,12 +12,12 @@ function App() {
   const title = useRef(null)
   const arrow = useRef(null)
   const header = useRef(null)
+  const footer = useRef(null)
 
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 
   useEffect(() => {
-
     ScrollSmoother.create({
       wrapper: "#smooth-wrapper",
       content: "#smooth-content",
@@ -39,6 +39,16 @@ function App() {
         trigger: header.current,
         start: "100 top",
         end: "350 top",
+        scrub: true
+      }
+    })
+
+    gsap.to(document.body, {
+      backgroundColor: "#000000",
+      scrollTrigger: {
+        trigger: footer.current,
+        start: 'top bottom',
+        end: 'bottom bottom',
         scrub: true
       }
     })
@@ -70,7 +80,7 @@ function App() {
             <div className='w-[90%] self-center flex flex-col'>
               <div >
                 <h3 className='text-4xl md:text-7xl mb-2'>About me</h3>
-                <p className='text-2xl md:text-4xl xl:text-5xl leading-normal'>My name is <span className='text-red-400'>Jovany Valenzuela Gambino</span>, i am a United States Citizen / Mexico Citizen and a frontend developer passionate about web development and user interface design.
+                <p className='text-2xl md:text-4xl xl:text-5xl leading-normal'>My name is <span className='text-red-400'>Jovany Valenzuela Gambino</span>, i am a United States Citizen / Mexico Citizen and a frontend developer.
                   I mainly work with technologies like <span className='text-yellow-200'>JavasScript</span>, <span className='text-blue-400'>TypeScript</span>, <span className='text-blue-200'>React</span>, <span className='text-neutral-400'>NextJs</span>, <span className='text-green-300'>NodeJs</span>, <span className='text-orange-300'>SQL</span> and others.<br />
                   I am currently studying Software Engineering at university and i have been studying software development on my own since 2023.<br />
                   {/* My current goal is to find a company where I can start and grow a career as a professional frontend/fullstack developer, be part of a team, and continue improving myself as a developer. */}
@@ -134,26 +144,44 @@ function App() {
             </div>
 
             {/* Education section */}
-            <h2 className='text-5xl p-8 rounded-full bg-[#4B2814] mx-auto mb-20 mt-80'>Education</h2>
+            <h2 className='text-5xl p-8 rounded-full bg-[#4B2814] mx-auto mb-15 mt-90'>Education</h2>
             <div className='mx-auto'>
-              <a href='https://uveg.edu.mx/index.php/es/info-ids' target='blank' className='bg-linear-to-b from-[#D1F5FF] via-[#BDCFFF] via-85% to-[#A6B8FF] flex flex-col md:h-210 h-160 lg:w-380 xl:w-490 w-[95%] mx-auto p-8 text-white rounded-4xl
+              <div className='bg-linear-to-b from-[#D1F5FF] via-[#BDCFFF] via-85% to-[#A6B8FF] flex flex-col md:h-225 h-185 lg:w-380 xl:w-490 w-[95%] mx-auto p-8 text-white rounded-4xl
               text-center justify-center gap-6 text-shadow-black/20 text-shadow-md border-4 border-neutral-50'>
                 <h3 className='md:text-7xl text-6xl'>University</h3>
                 <p className='md:text-6xl text-4xl dotted text-yellow-100' rel="noopener noreferrer">Universidad Virtual del Estado de Guanajuato</p>
-                <p className='md:text-6xl text-4xl'>Software Engineering</p>
+                <p className='md:text-6xl text-4xl'>Bachelor's in Software Engineering</p>
                 <p className='md:text-5xl text-3xl md:p-4 p-2 bg-black/15 rounded-lg inline-block mx-auto'>3.7 GPA</p>
                 <p className='md:text-4xl text-2xl mt-4'>April [2024] - December [2026]</p>
+                <p className='md:text-4xl text-2xl mt-1 p-2 bg-blue-800/20 rounded-lg inline-block mx-auto'>Ongoing</p>
 
                 <div className='mx-auto mt-8'>
                   <img src="assets/icons/university.svg" alt="university icon" className='md:w-50 w-25' />
                 </div>
-              </a>
-              <div>
-                <h3></h3>
               </div>
             </div>
 
             {/*Objetive section*/}
+            <div className='mt-230 mb-95' ref={footer} >
+              <div>
+                <p className='text-white md:text-5xl/relaxed text-2xl/normal text-center lg:w-380 xl:w-490 w-[90%] mx-auto '>My current goal is to find a company where I can grow my career as a professional web developer and be part of a team. I am always interested in learning new technologies and open to different opportunity offers.</p>
+              </div>
+
+              <p className='lg:text-6xl text-4xl text-center lg:mt-40 mt-15'>Leave me a message</p>
+
+              {/*Contact section*/}
+              <div className='flex mx-auto lg:mt-30 mt-20 items-center content-center lg:w-[60%] w-full justify-around'>
+                <a href="mailto:gambino84_@hotmail.com" className='bg-white lg:p-3 p-2 rounded-2xl lg:w-40 w-25'>
+                  <img src="assets/icons/mail.svg" alt="mail" className='w-auto h-auto' />
+                </a>
+                <a href="https://www.linkedin.com/in/jovanyvale/" className='bg-white lg:p-6 p-4 rounded-2xl lg:w-40 w-25'>
+                  <img src="assets/icons/linkedin.svg" alt="linkedin" />
+                </a>
+                <a href="https://github.com/Jovanyvale" className='bg-white lg:p-4 p-3 rounded-2xl lg:w-40 w-25'>
+                  <img src="assets/icons/github.svg" alt="github" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div >
